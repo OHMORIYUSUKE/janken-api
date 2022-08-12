@@ -10,18 +10,26 @@
 </head>
 <body>
     <h1>じゃんけんゲーム</h1>
+    <h3>CPU「<span id="apiMessege"></span>」</h3>
     <div class="result">
-        <h3 class="apiMessege">CPU「ぼくの勝ちー!」</h3>
-        <p>CPUの手</p>
-        <div class="apiHand">
-            <img src="./images/janken_choki.png" alt="">
+        <div>
+            <p>CPUの手</p>
+            <div class="apiHand">
+                <img id="cpuHand" src="" alt="">
+            </div>
+        </div>
+        <div>
+            <p>あなたの手</p>
+            <div class="youHand">
+                <img id="youHand" src="" alt="">
+            </div>
         </div>
     </div>
     <h3>手を選択してね!</h3>
     <div class="hands">
-        <img src="./images/janken_gu.png" alt="グー">
-        <img src="./images/janken_choki.png" alt="チョキ">
-        <img src="./images/janken_pa.png" alt="パー">
+        <input type="button" value="グー" onclick="gu()">
+        <input type="button" value="チョキ" onclick="tyoki()">
+        <input type="button" value="パー" onclick="pa()">
     </div>
 </body>
 </html>
