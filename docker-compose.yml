@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web:
+    build: ./backend
+    restart: always
+    tty: true
+    volumes:
+      - ./backend/src:/var/www/html
+    ports:
+      - 80:3000
