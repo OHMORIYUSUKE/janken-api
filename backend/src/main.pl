@@ -1,23 +1,20 @@
 use Mojolicious::Lite;
 
 # ルーティングのパターンの指定
-post '/' => sub {
+post '/janken' => sub {
   my $self = shift;
   # javascriptのためにおまじない
   $self->res->headers->header('Access-Control-Allow-Origin' => '*'); 
   
   # パラメーターの受け取り
-  my $req = $self->req;
-  my $data = $req->json;
+  my $json = $self->req->json;
   # $jibunに0~2が入る
-  my $jibun = $data->{"jibun"};
+  my $jibun = $json->{"jibun"};
   
   # グー: 0, チョキ: 1, パー: 2
-  my $aite = 1;
-  $aite = my $num = int(rand(3));
+  my $aite = int(rand(3));
   # 人間の勝ち:2 , 負け: 1, あいこ: 0
-  my $hantei = 1;
-  $hantei = ($jibun - $aite + 3) % 3;
+  my $hantei = ($jibun - $aite + 3) % 3;
 
   # 勝ち負けのメッセージ(CPU視点)
   my $message = "";

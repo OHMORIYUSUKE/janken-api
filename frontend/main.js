@@ -11,7 +11,7 @@ function pa() {
 // apiにデータを送信
 function api(jibun) {
     const data = {"jibun": jibun};
-    fetch('http://localhost/', { // 送信先URL
+    fetch('http://localhost/janken', { // 送信先URL
         method: 'post', // 通信メソッド
         header: {
             'Content-Type': 'application/json' // JSON形式のデータのヘッダー
