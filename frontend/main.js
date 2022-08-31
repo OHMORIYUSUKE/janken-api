@@ -25,9 +25,6 @@ function api(jibun) {
         // 画像を変化させる処理
         document.getElementById("cpuHand").src = "./images/"+data.aite+".png";
         document.getElementById("youHand").src = "./images/"+data.jibun+".png";
-
-        // CPUのメッセージを変化させる処理
-        document.getElementById("apiMessege").innerText = data.message;
     })
     .catch(err => {
         // エラー処理
