@@ -17,9 +17,11 @@ post '/janken' => sub {
   # ....
 
   # レスポンスのデータを作成
-  # hantei 勝ちか負けか
+  # hantei 勝ちか負けか (例)人間の勝ち 0, CPUの勝ち 1, 引き分け 2
   # jibun 人間の手
   # aite CPUの手
+  my $hantei = 1;
+  my $aite = 1;
   my $data_res = {hantei => $hantei, jibun => $jibun, aite => $aite};
   
   # jsonをレスポンスとして返す

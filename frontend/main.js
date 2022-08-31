@@ -20,11 +20,22 @@ function api(jibun) {
     })
     .then(response => response.json()) // レスポンスをjsonに変換
     .then(data => {
+        // ログを出力
         console.log(data);
 
         // 画像を変化させる処理
         document.getElementById("cpuHand").src = "./images/"+data.aite+".png";
         document.getElementById("youHand").src = "./images/"+data.jibun+".png";
+
+        // アラートを出す処理
+        // 勝ち負けを表示
+        if (data.hantei == 0){
+            window.alert("あなたの勝ち");
+        }else if(data.hantei == 1){
+            window.alert("CPUの勝ち");
+        }else{
+            window.alert("引き分け");
+        }
     })
     .catch(err => {
         // エラー処理
